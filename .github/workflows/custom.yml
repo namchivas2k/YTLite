@@ -1,4 +1,4 @@
-name: Create YouTube Plus app
+name: (Custom) Create YouTube Plus app
 
 on:
   workflow_dispatch:
