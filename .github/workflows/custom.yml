@@ -3,13 +3,7 @@ name: Create YouTube Plus app
 on:
   workflow_dispatch:
     inputs:
-
-      enable_ytflipper:
-        description: "Integrate YTFlipper"
-        type: boolean
-        required: true
-        default: true
-
+    
       enable_youpip:
         description: "Integrate YouPiP"
         type: boolean
@@ -187,7 +181,7 @@ jobs:
           THEOS: ${{ github.workspace }}/theos
 
       - name: Clone YTFlipper
-        if: ${{ inputs.enable_ytflipper }}
+        # if: ${{ inputs.enable_ytflipper }}
         run: |
           cd ${{ github.workspace }}
           git clone --quiet --depth=1 https://github.com/namchivas2k/YTFlipper.git
@@ -235,7 +229,7 @@ jobs:
           git clone --quiet --depth=1 --recurse-submodules https://github.com/therealFoxster/DontEatMyContent.git
 
       - name: Build YTFlipper
-        if: ${{ inputs.enable_ytflipper }}
+        # if: ${{ inputs.enable_ytflipper }}
         run: |
           cd ${{ github.workspace }}/YTFlipper
           make clean package DEBUG=0 FINALPACKAGE=1
